@@ -31,20 +31,49 @@ public class FirstFragment extends Fragment {
                 ViewModelProviders.of(requireActivity()).get(PageViewModel.class);
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextInputEditText nameEditText = view.findViewById(R.id.textInputTextName);
+        TextInputEditText numberEditText = view.findViewById(R.id.textInputTextNumber);
+        TextInputEditText addressEditText = view.findViewById(R.id.textInputTextAddress);
+        TextInputEditText schoolEditText = view.findViewById(R.id.textInputTextSchool);
 
         nameEditText.addTextChangedListener(new TextWatcher() {
             @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
             @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 pageViewModel.setName(charSequence.toString());
+            }
+            @Override public void afterTextChanged(Editable editable) {
+            }
+        });
+        numberEditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                pageViewModel.setNumber(charSequence.toString());
+            }
+            @Override public void afterTextChanged(Editable editable) {
+            }
+        });
+        addressEditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                pageViewModel.setAddress(charSequence.toString());
+            }
+            @Override public void afterTextChanged(Editable editable) {
+            }
+        });
+        schoolEditText.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+            @Override public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                pageViewModel.setSchool(charSequence.toString());
             }
             @Override public void afterTextChanged(Editable editable) {
             }

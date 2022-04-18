@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class SecondFragment extends Fragment {
     private PageViewModel pageViewModel;
-    private TextView txtName;
+    private TextView txtViewName, txtViewNumber, txtViewAddress, txtViewSchool;
     public SecondFragment () {
 
     }
@@ -38,13 +38,33 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        txtName = view.findViewById(R.id.textViewName);
+        txtViewName = view.findViewById(R.id.textViewName);
+        txtViewNumber = view.findViewById(R.id.textViewNumber);
+        txtViewAddress = view.findViewById(R.id.textViewAddress);
+        txtViewSchool = view.findViewById(R.id.textViewSchool);
         pageViewModel.getName().observe(requireActivity(), new Observer<String>() {
                     @Override
                     public void onChanged(@Nullable String name) {
-                        txtName.setText(name);
+                        txtViewName.setText(name);
                     }
                 });
+        pageViewModel.getNumber().observe(requireActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String number) {
+                txtViewNumber.setText(number);
+            }
+        });
+        pageViewModel.getAddress().observe(requireActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String address) {
+                txtViewAddress.setText(address);
+            }
+        });
+        pageViewModel.getSchool().observe(requireActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String school) {
+                txtViewSchool.setText(school);
+            }
+        });
     }
-
      }
