@@ -1,8 +1,8 @@
 # Ananda Kusuma Wardhani
 # Android-Fragment
 
-# Tambah Nama
+# Input Data
 ![alt text](https://github.com/AnandaKW/Android-Fragment/blob/master/Screenshoot/MyFragment-1.jpeg)
 
-# Tampil Nama
+# Output Data
 ![alt text](https://github.com/AnandaKW/Android-Fragment/blob/master/Screenshoot/MyFragment-2.jpeg)
